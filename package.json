@@ -1,0 +1,41 @@
+{
+  "name": "vue-manage-system",
+  "version": "4.2.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "dev": "npm run serve"
+  },
+  "dependencies": {
+    "@aspnet/signalr": "^1.1.4",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "echarts": "^4.9.0",
+    "element-ui": "^2.11.0",
+    "ezuikit-js": "^0.2.2",
+    "jwt-decode": "^3.0.0",
+    "lodash": "^4.17.20",
+    "mavon-editor": "^2.6.17",
+    "nprogress": "^0.2.0",
+    "vue": "^2.6.10",
+    "vue-amap": "^0.5.10",
+    "vue-cropperjs": "^3.0.0",
+    "vue-i18n": "^8.10.0",
+    "vue-quill-editor": "^3.0.6",
+    "vue-router": "^3.0.3",
+    "vue-schart": "^2.0.0",
+    "vuedraggable": "^2.17.0",
+    "vuex": "^3.0.1",
+    "vxe-table": "^2.9.25",
+    "xe-utils": "^2.7.20"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.2",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
