@@ -1,4 +1,4 @@
-# 			无人船水质检测后台管理系统
+# 无人船水质检测后台管理系统
 
 ## 一、概述
 
@@ -10,9 +10,9 @@
 
 a. 当主控连接至服务器时，服务器获取其序列号；
 
-b. 服务器将主控序列号和IP地址关联；
+b. 服务器将主控序列号和 IP 地址关联；
 
-c. 如果在此IP地址上接收到测量仪器或摄像机的连接，则将这些连接与主控关联；
+c. 如果在此 IP 地址上接收到测量仪器或摄像机的连接，则将这些连接与主控关联；
 
 d. 至此，平台可以通过主控序列号对各个子设备进行直接访问。
 
@@ -20,48 +20,60 @@ d. 至此，平台可以通过主控序列号对各个子设备进行直接访�
 
 ### 1、系统登录页面
 
-![image-20210222172911695](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222172911695.png)
+![image-20210222172911695.png](https://i.loli.net/2021/02/26/ExFhRdH7VCPML2b.png)
 
 沿用了传统的后台管理系统简洁大方的优点进行设计
 
 ### 2、系统首页
 
-![img](file:///C:\Users\lixiaoyao\Documents\Tencent Files\1176286624\Image\C2C\1{~524~@2N4BHO_~T]WI4JV.png)
+![1_~524~@2N4BHO_~T_WI4JV.png](https://i.loli.net/2021/02/26/ELriwlxeYFW6XAj.png)
 
 用户登陆时，默认打开系统运行状态页面，该页面主要功能如下：
 
 1. 页面打开时，获取用户有权限访问的所有船只，开始监视这些船只的运行和计划执行的状态
 2. 页面以地图展示为主，地图上显示所有船只的位置和航向，船只图标上标注无人船的名称和状态，在线的船只同时显示其航行速度
 3. 鼠标点击船只图标时，跳转至船只状态页面（详见 [#45](https://dev.azure.com/ritju/96a77b14-f2e7-4bd6-aa89-5d16b8644e99/_workitems/edit/45) ）
-4. 用户可以开启和关闭绘制无人船轨迹的功能，功能开启时在地图上绘制所有无人船的移动轨迹（不通的船只使用不同的颜色），也可以清除地图上绘制的轨迹  
+4. 用户可以开启和关闭绘制无人船轨迹的功能，功能开启时在地图上绘制所有无人船的移动轨迹（不通的船只使用不同的颜色），也可以清除地图上绘制的轨迹
 
 ### 3、用户信息管理
 
-![image-20210222174553569](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222174553569.png)
+![image-20210222174553569.png](https://i.loli.net/2021/02/26/94i36lYhgIFxDQA.png)
 
 ### 4、组织机构管理
 
-![image-20210222174821569](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222174821569.png)
+![image-20210222174821569.png](https://i.loli.net/2021/02/26/jlNODpvwdihs9IF.png)
 
 ### 5、无人船信息管理界面
 
-![image-20210222173417685](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222173417685.png)
+![image-20210222173417685.png](https://i.loli.net/2021/02/26/m9hXZiJ1LtgEsKn.png)
 
-![image-20210222173448070](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222173448070.png)
+###### 5.1实时视频
+
+![_KU_BPZID_K8JI6JDRQJ__T.png](https://i.loli.net/2021/02/26/5IyxtLNmg9PQT3l.png)
+
+###### 5.2配置信息界面
+
+![6OWFS@_RHA2Z7S_7J4QK_OW.png](https://i.loli.net/2021/02/26/tINucC76YPKLbWr.png)
+
+###### 5.3查看运行状态页面
+
+![MOJ33_@X_JG`7_5_0V_QV_X.png](https://i.loli.net/2021/02/26/cXYV4qOKkN1pIRw.png)
+
+
 
 无人船信息管理界面可以对无人船进行管理以及无人船的状态配置，如：设置返航点，修改配置信息等，船只状态在线时可以查看无人船运行状态
 
 ### 6、计划管理
 
-![image-20210222173714160](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222173714160.png)
+![image-20210222173714160.png](https://i.loli.net/2021/02/26/QweGMPBFZDRtAk4.png)
 
 计划管理可以给船只的航行路径进行规划，执行计划后可以对船只行驶的轨迹进行跟踪。
 
 ### 7、航标管理
 
-![image-20210222173931482](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222173931482.png)
+![image-20210222173955022.png](https://i.loli.net/2021/02/26/Sa5eHiKc1JEqbXT.png)
 
-![image-20210222173955022](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222173955022.png)
+![image-20210222173931482.png](https://i.loli.net/2021/02/26/4QO5Fri6nB32mZc.png)
 
 根据后端接口实现航标的增删改查功能：
 
@@ -82,10 +94,10 @@ d. 至此，平台可以通过主控序列号对各个子设备进行直接访�
 
    ### 9、港口泊位管理
 
-   ![image-20210222174317700](C:\Users\lixiaoyao\AppData\Roaming\Typora\typora-user-images\image-20210222174317700.png)
+   ![image-20210222174317700.png](https://i.loli.net/2021/02/26/3EZvNKQz8n1JLDR.png)
 
-1. 所有操作在地图上进行；
-2. 根据地图显示范围和缩放级别查询港口并显示，也可以输入港口的IDENT或名称搜索；
-3. 根据港口的范围和当前地图范围决定是否绘制港口的范围，如果绘制了港口范围，同时应获取泊位信息进行绘制；
-4. 点击港口图标时，显示港口详情和泊位列表，列出新增泊位、修改港口、删除港口等操作地图缩放至可编辑港口的级别；
-5. 点击泊位图标时，显示泊位详情，列出修改泊位和删除泊位等操作。
+5. 所有操作在地图上进行；
+6. 根据地图显示范围和缩放级别查询港口并显示，也可以输入港口的 IDENT 或名称搜索；
+7. 根据港口的范围和当前地图范围决定是否绘制港口的范围，如果绘制了港口范围，同时应获取泊位信息进行绘制；
+8. 点击港口图标时，显示港口详情和泊位列表，列出新增泊位、修改港口、删除港口等操作地图缩放至可编辑港口的级别；
+9. 点击泊位图标时，显示泊位详情，列出修改泊位和删除泊位等操作。
