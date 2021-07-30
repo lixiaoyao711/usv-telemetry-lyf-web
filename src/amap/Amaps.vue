@@ -511,9 +511,7 @@
 <script>
 import Vue from 'vue';
 import VueAMap from 'vue-amap';
-import { AMapManager, lazyAMapApiLoaderInstance } from 'vue-amap';
-import { log } from 'util';
-import LoginVue from '../views/login/Login.vue';
+import { lazyAMapApiLoaderInstance } from 'vue-amap';
 import { rotate } from '@/components/common/rotate';
 
 import enums from '@/utils/enums';
@@ -521,11 +519,8 @@ import enums from '@/utils/enums';
 // 事件总线
 import bus from '@/components/common/bus';
 
-// 导入公用接口函数
-import { getMakerData } from '@/utils/request';
-
 // 防抖
-import { debounce, navPolyline, trun } from '@/utils/common';
+import { navPolyline, trun } from '@/utils/common';
 
 Vue.use(VueAMap);
 

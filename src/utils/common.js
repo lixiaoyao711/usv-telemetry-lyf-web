@@ -163,6 +163,124 @@ export function navPolyline(map, funPolyline, navaidFromArray, navaidToArray) {
   return funPolyline;
 }
 
+// 时间戳转换成年月日，时分秒：
+export function formatDate(value) {
+  if (typeof value == 'undefined') {
+    return '';
+  } else {
+    let date = new Date(parseInt(value));
+    let y = date.getFullYear();
+    let MM = date.getMonth() + 1;
+    MM = MM < 10 ? '0' + MM : MM;
+    let d = date.getDate();
+    d = d < 10 ? '0' + d : d;
+    let h = date.getHours();
+    h = h < 10 ? '0' + h : h;
+    let m = date.getMinutes();
+    m = m < 10 ? '0' + m : m;
+    let s = date.getSeconds();
+    s = s < 10 ? '0' + s : s;
+    return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s;
+  }
+}
+//中国标准时间转换年月日
+export function formatDateTime(date) {
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  m = m < 10 ? '0' + m : m;
+  var d = date.getDate();
+  d = d < 10 ? '0' + d : d;
+  var h = date.getHours();
+  var minute = date.getMinutes();
+  minute = minute < 10 ? '0' + minute : minute;
+  return y + '-' + m + '-' + d;
+  // return y + '-' + m + '-' + d + ' ' + h + ':' + minute;
+}
+
+// 计算时间(时间类型字符串-数值天数)
+export function countTime(time, day) {
+  time = new Date(time).getTime() / 1000;
+  day = day * 86400;
+  //中国标准时间转换年月日
+  return formatDateTime(new Date((time - day) * 1000));
+}
+
+// 获取url中的参数并截取下来
+export function getQueryVariable(variable) {
+  let query = window.location.search.substring(1);
+  let vars = query.split('&');
+  for (let i = 0; i < vars.length; i++) {
+    let pair = vars[i].split('=');
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  return false;
+}
+
+// 生成随机的唯一id
+export function guid() {
+  return 'xxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = (Math.random() * 16) | 0,
+      v = c == 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16).toUpperCase();
+  });
+}
+
+import dd from 'gdt-jsapi';
+// 判断当前页面是在钉钉、微信还是浏览器中打开
+export const userAgentObj = () => {
+  const ua = navigator.userAgent.toLowerCase();
+  let isWeiXin = false,
+    isDingTalk = false,
+    isApp = false,
+    obj = {};
+  if (ua.match(/DingTalk/i) == 'dingtalk') {
+    //用钉钉打开
+    isDingTalk = true;
+  } else if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+    //用微信打开
+    isWeiXin = true;
+  } else {
+    //用其他浏览器打开
+    isApp = true;
+  }
+  obj.isWeiXin = isWeiXin;
+  obj.isDingTalk = isDingTalk;
+  obj.isApp = isApp;
+
+  sessionStorage.setItem('userAgentObj', JSON.stringify(obj));
+  return obj;
+};
+// 修改头部标题的函数-----兼容微信、钉钉和浏览器
+export const ChangePageTitle = title => {
+  let userAgentObj = JSON.parse(sessionStorage.getItem('userAgentObj')) || null;
+  console.log('userAgentObj', userAgentObj);
+  if (userAgentObj && userAgentObj.isDingTalk) {
+    console.log('title是', title);
+    //钉钉内
+    dd.ready(function() {
+      dd.biz.navigation.setTitle({
+        title: title, //控制标题文本，空字符串表示显示默认文本
+        onSuccess: function(result) {},
+        onFail: function(err) {},
+      });
+    });
+  } else {
+    //微信或浏览器内
+    // var $body = $('body');
+    document.title = title; //普通浏览器用这一句就可以修改了
+    // var $iframe = $('<iframe style="display: none"></iframe>');
+    // $iframe
+    //     .on('load', function() {
+    //         setTimeout(function() {
+    //             $iframe.off('load').remove();
+    //         }, 0);
+    //     })
+    //     .appendTo($body);
+  }
+};
+
 // //航标范围
 // export function navPolyline(map, funPolyline, navaidFromArray, navaidToArray) {
 //   let fromLine=""

@@ -4,7 +4,6 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  /* min-width: 1200px !important; */
 }
 /* //面包屑导航样式 */
 .el-breadcrumb {

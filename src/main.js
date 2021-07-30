@@ -41,9 +41,9 @@ Vue.prototype._ = _;
 import { returnMessage } from '../src/api/index';
 import { updateToken } from '../src/utils/request';
 //,导入注册SignalR
-import { install } from '@/utils/shioSignalR';
+import { install, logout } from '@/utils/shioSignalR';
 // 断开事件流的函数
-import { logout } from '@/utils/shioSignalR';
+// import {  } from '@/utils/shioSignalR';
 install();
 
 // 定义事件总线
@@ -56,10 +56,9 @@ Vue.prototype.$echarts = echarts;
 Vue.prototype.$http = axios;
 axios.defaults.baseURL = 'api';
 
-//axios请求拦截
 //控制当前响应完成后,才能点击下一次
 var loading;
-
+//axios请求拦截
 axios.interceptors.request.use(
   async config => {
     NProgress.start();
@@ -96,8 +95,7 @@ axios.interceptors.response.use(
     // 处理没有errormessage的情况,提示默认信息
     else if (res.data.errorCode != 0) {
       ElementUI.Message({
-        message:
-          '服务器在处理您的请求的过程中出现了未预料的错误，请稍后再试。如果此错误重复出现，请联系系统管理员。',
+        message: '服务器在处理您的请求的过程中出现了未预料的错误，请稍后再试。如果此错误重复出现，请联系系统管理员。',
         type: 'error',
       });
     }
