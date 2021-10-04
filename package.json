@@ -14,6 +14,7 @@
     "echarts": "^4.9.0",
     "element-ui": "^2.11.0",
     "ezuikit-js": "^0.2.2",
+    "gdt-jsapi": "^1.9.20",
     "jwt-decode": "^3.0.0",
     "lodash": "^4.17.20",
     "mavon-editor": "^2.6.17",
